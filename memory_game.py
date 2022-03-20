@@ -1,11 +1,24 @@
 from random import shuffle
 from tkinter import *
 from tkinter.messagebox import *
+import os
 
 class Memory_Game:
     def __init__(self) -> None:
         self.coordinates = []
-        self.tileFilePath = ['C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\c#.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\c++.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\c.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\java.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\js.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\matlab.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\php.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\python.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\ruby.gif', 'C:\\Users\\hp\\OneDrive\\Documents\\PROGRAMMING\\PYTHON\\.vscode\\TKINTER\\Memory_Game\\tiles\\swift.gif']
+        cur_dir = os.getcwd()
+        self.tileFilePath = [
+            f'{cur_dir}\\tiles\\c#.gif',
+            f'{cur_dir}\\tiles\\c++.gif',
+            f'{cur_dir}\\tiles\\c.gif',
+            f'{cur_dir}\\tiles\\java.gif',
+            f'{cur_dir}\\tiles\\js.gif',
+            f'{cur_dir}\\tiles\\matlab.gif', 
+            f'{cur_dir}\\tiles\\php.gif',
+            f'{cur_dir}\\tiles\\python.gif',
+            f'{cur_dir}\\tiles\\ruby.gif', 
+            f'{cur_dir}\\tiles\\swift.gif'
+        ]
         self.tileImg = [PhotoImage(file=f) for f in self.tileFilePath]
         self.movesLeft = 30
         self.moves = StringVar()
